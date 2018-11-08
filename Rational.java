@@ -58,6 +58,7 @@ private long denom;
 		//Remove after testing
 		System.out.println(a + " " + b + "\n The simplified rational is " + numer + "/" + denom );
 		System.out.println("The numerator is " + numer + "the denominator is " + denom);
+		makePositive(r);
 		return r;
 		}
 		else 
@@ -79,6 +80,7 @@ private long denom;
 			//Remove after testing
 			System.out.println(a + " " + b + "\n The simplified rational is " + numer + "/" + denom );
 			System.out.println("The numerator is " + numer + "the denominator is " + denom);
+			makePositive(r);
 			return r;
 			}
 			else 
@@ -103,6 +105,7 @@ private long denom;
 			
 			numer = numer/gcd;
 			denom = denom/gcd;
+			makePositive(r);
 			System.out.println("The simplified rational is " + numer + "/" + denom);
 			return r;
 			
@@ -113,7 +116,7 @@ private long denom;
 		}
 	}
 	
-	//This method devides THIS by r while also handling an input of null; It implements this by multiplying by the reciprocal or r;
+	//This method divides THIS by r while also handling an input of null; It implements this by multiplying by the reciprocal or r;
 	public Rational divide(Rational r) {
 		if (r != null) {
 			long a = r.getDenominator();
@@ -144,7 +147,6 @@ private long denom;
 	
 	
 	//method for simplifying the numerator and denominator;
-	//make sure that the this keyword is the correct one;************************
 	public void simplify(long a, long b) {
 		
 		this.numer = (a/gcd(a,b));
